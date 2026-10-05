@@ -1,0 +1,850 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    background-color: #f2f2f2;
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* MENÚ */
+
+.menu {
+
+    background-color: darkblue;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 15px 40px;
+
+}
+
+.menu h2 {
+
+    color: white;
+
+    margin: 0;
+
+}
+
+.enlaces-menu {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+.enlaces-menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+}
+
+.enlaces-menu a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* ========================= */
+/* BANNER PRINCIPAL */
+/* ========================= */
+
+#inicio {
+
+    padding: 0;
+
+}
+
+
+.banner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 600px;
+
+    overflow: hidden;
+
+    background-color: black;
+
+}
+
+
+.banner-foto {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+
+}
+
+
+.banner-foto.activa {
+
+    opacity: 1;
+
+}
+
+
+.banner-foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.40);
+
+    z-index: 1;
+
+}
+
+
+.contenido-banner {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+
+    left: 8%;
+
+    transform: translateY(-50%);
+
+    color: white;
+
+    max-width: 600px;
+
+}
+
+
+.contenido-banner p:first-child {
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.contenido-banner h1 {
+
+    font-size: 58px;
+
+    line-height: 1.1;
+
+    margin: 0 0 20px 0;
+
+}
+
+
+.contenido-banner p {
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+
+}
+
+
+.boton-principal {
+
+    display: inline-block;
+
+    background-color: darkblue;
+
+    color: white;
+
+    padding: 14px 28px;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.boton-principal:hover {
+
+    background-color: black;
+
+    transform: translateY(-2px);
+
+}
+
+
+.flecha-banner {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 3;
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 50%;
+
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.flecha-banner:hover {
+
+    background-color: darkblue;
+
+}
+
+
+.anterior-banner {
+
+    left: 25px;
+
+}
+
+
+.siguiente-banner {
+
+    right: 25px;
+
+}
+
+
+.indicadores {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.indicador {
+
+    width: 11px;
+
+    height: 11px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    opacity: 0.5;
+
+}
+
+
+.indicador.activo {
+
+    opacity: 1;
+
+    background-color: white;
+
+}
+
+
+
+/* ========================= */
+/* CATEGORÍAS DE MOTOS */
+/* ========================= */
+
+#motos {
+
+    padding: 20px;
+
+}
+
+
+#motos > h2 {
+
+    text-align: center;
+
+    color: darkblue;
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.texto-categorias {
+
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #555;
+
+    margin-bottom: 40px;
+
+}
+
+
+.categorias-motos {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.categoria-moto {
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s;
+
+}
+
+
+.categoria-moto:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.categoria-moto img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+}
+
+
+.categoria-moto h3 {
+
+    color: darkblue;
+
+    font-size: 24px;
+
+    margin: 20px 10px 10px;
+
+}
+
+
+.categoria-moto p {
+
+    color: #555;
+
+    line-height: 1.5;
+
+    padding: 0 15px;
+
+}
+
+
+.categoria-moto a {
+
+    display: inline-block;
+
+    background-color: darkblue;
+
+    color: white;
+
+    padding: 11px 22px;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    margin: 10px 0 25px;
+
+}
+
+
+.categoria-moto a:hover {
+
+    background-color: black;
+
+}
+
+
+
+/* ========================= */
+/* CATÁLOGO ENDuro */
+/* ========================= */
+
+.catalogo {
+
+    padding: 60px 20px;
+
+}
+
+
+.catalogo > h1 {
+
+    text-align: center;
+
+    color: darkblue;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.texto-catalogo {
+
+    text-align: center;
+
+    color: #555;
+
+    font-size: 18px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.catalogo-motos {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.moto-catalogo {
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.moto-catalogo img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+}
+
+
+.informacion-moto {
+
+    padding: 20px;
+
+}
+
+
+.informacion-moto h2 {
+
+    color: darkblue;
+
+    margin-top: 0;
+
+}
+
+
+.informacion-moto p {
+
+    color: #444;
+
+    margin: 8px 0;
+
+}
+
+
+.boton-moto {
+
+    display: inline-block;
+
+    background-color: darkblue;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    margin-top: 15px;
+
+}
+
+
+.boton-moto:hover {
+
+    background-color: black;
+
+}
+
+
+
+/* ========================= */
+/* DETALLE DE MOTO */
+/* ========================= */
+
+.detalle-moto {
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.detalle-moto h2 {
+
+    color: darkblue;
+
+    text-align: center;
+
+    font-size: 30px;
+
+}
+
+
+.detalle-moto p {
+
+    line-height: 1.6;
+
+    color: #444;
+
+}
+
+
+
+/* VOLVER */
+
+.volver {
+
+    text-align: center;
+
+    margin: 40px 0 60px;
+
+}
+
+
+.volver a {
+
+    color: darkblue;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+.volver a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* SECCIONES DE INFORMACIÓN */
+
+#informacion-nmax,
+#informacion-xtz,
+#informacion-cb110,
+#informacion-apache,
+#nosotros,
+#contacto {
+
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+
+#informacion-nmax h2,
+#informacion-xtz h2,
+#informacion-cb110 h2,
+#informacion-apache h2,
+#nosotros h2,
+#contacto h2 {
+
+    color: darkblue;
+
+    text-align: center;
+
+}
+
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+    .categorias-motos {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .catalogo-motos {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+
+    .menu {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px;
+
+    }
+
+
+    .enlaces-menu {
+
+        gap: 15px;
+
+    }
+
+
+    .banner {
+
+        height: 500px;
+
+    }
+
+
+    .contenido-banner {
+
+        left: 25px;
+
+        right: 25px;
+
+        max-width: none;
+
+        text-align: center;
+
+    }
+
+
+    .contenido-banner h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .contenido-banner p {
+
+        font-size: 17px;
+
+    }
+
+
+    .flecha-banner {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 18px;
+
+    }
+
+
+    .anterior-banner {
+
+        left: 10px;
+
+    }
+
+
+    .siguiente-banner {
+
+        right: 10px;
+
+    }
+
+
+    .categorias-motos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .categoria-moto img {
+
+        height: 200px;
+
+    }
+
+
+    .catalogo-motos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .moto-catalogo img {
+
+        height: 220px;
+
+    }
+
+
+    .detalle-moto {
+
+        margin: 30px 20px;
+
+        padding: 25px;
+
+    }
+
+}
